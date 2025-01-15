@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Responsiveness setup, and CSS linking -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISKOPE - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation bar with logo, search bar, and a collapsible menu -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                <div class="logo-img"></div> <!-- Placeholder for logo image -->
+                ISKOPE
+            </div>
+        </a>   
+        <input type="search" class="search-bar" placeholder="Search...">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-btn">☰</label>
+        <div class="menu-content">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+                <li>SETTINGS</li>
+                <li>HELP CENTER</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main profile section -->
+    <div class="profile-container">
+        <h1>Profile</h1>
+
+        <!-- Profile picture upload feature -->
+        <div class="profile-picture">
+            <label for="upload-picture" class="upload-label">
+                <div class="picture-container" id="picture-container">
+                    <span id="upload-text">+</span>
+                </div>
+                <span class="upload-prompt">Click to add picture</span>
+            </label>
+            <input type="file" id="upload-picture" accept="image/*">
+        </div>
+
+        <!-- Profile form with fields for student number, name, date of birth, email, and contact number -->
+        <form class="profile-form" id="profileForm">
+            <label for="student-number">Student Number:</label>
+            <input type="text" id="student-number" placeholder="Enter your student number" required>
+            <span class="error-message" id="student-number-error"></span>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <span class="error-message" id="name-error"></span>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+            <span class="error-message" id="dob-error"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <span class="error-message" id="email-error">Please enter a valid email address.</span>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" placeholder="Enter your contact number" required>
+            <span class="error-message" id="contact-error">Please input a valid contact number.</span>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+    
+    <!-- JavaScript for image upload handling and form validation -->
+    <script src="script.js"></script>
+</body>
+</html>
