@@ -1,76 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Responsiveness setup, and CSS linking -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISKOpe - Profile</title>
+    <title>Profile - ISKOpe</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <!-- Navigation bar with logo, search bar, and a collapsible menu -->
-    <nav class="navbar">
-        <a href="index.html" class="logo-link">
-            <div class="logo">
-                <div class="logo-img"></div> <!-- Placeholder for logo image -->
-                ISKOpe
+    <header>
+        <div class="logo">ISKOpe</div>
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Search for lost items...">
+        </div>
+        <div class="nav-buttons">
+            <a href="about.html" class="nav-button about-us">About Us</a>
+            <i class="home-icon" onclick="location.href='index.html'"></i>
+        </div>        
+    </header>
+    <main class="profile-section">
+        <h1>Update Profile</h1>
+        <div class="profile-card">
+            <div class="profile-picture-container">
+                <label for="profile-upload" class="upload-label">Upload</label>
+                <input type="file" id="profile-upload" accept="image/*">
             </div>
-        </a>   
-        <input type="search" class="search-bar" placeholder="Search...">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-btn">☰</label>
-        <div class="menu-content">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="profile.html">PROFILE</a></li>
-                <li>SETTINGS</li>
-                <li>HELP CENTER</li>
-            </ul>
+            <form class="profile-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="contact-number">Contact Number:</label>
+                <input type="text" id="contact-number" placeholder="Enter your contact number" required>
+
+                <label for="student-number">Student Number:</label>
+                <input type="text" id="student-number" placeholder="Enter your student number" required>
+
+                <button type="submit" class="save-button">Save</button>
+            </form>
         </div>
-    </nav>
-
-    <!-- Main profile section -->
-    <div class="profile-container">
-        <h1>Profile</h1>
-
-        <!-- Profile picture upload feature -->
-        <div class="profile-picture">
-            <label for="upload-picture" class="upload-label">
-                <div class="picture-container" id="picture-container">
-                    <span id="upload-text">+</span>
-                </div>
-                <span class="upload-prompt">Click to add picture</span>
-            </label>
-            <input type="file" id="upload-picture" accept="image/*">
-        </div>
-
-        <!-- Profile form with fields for student number, name, date of birth, email, and contact number -->
-        <form class="profile-form" id="profileForm">
-            <label for="student-number">Student Number:</label>
-            <input type="text" id="student-number" placeholder="Enter your student number" required>
-            <span class="error-message" id="student-number-error"></span>
-
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-            <span class="error-message" id="name-error"></span>
-
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" required>
-            <span class="error-message" id="dob-error"></span>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <span class="error-message" id="email-error">Please enter a valid email address.</span>
-
-            <label for="contact">Contact Number:</label>
-            <input type="tel" id="contact" placeholder="Enter your contact number" required>
-            <span class="error-message" id="contact-error">Please input a valid contact number.</span>
-
-            <button type="submit">Save</button>
-        </form>
-    </div>
-    
-    <!-- JavaScript for image upload handling and form validation -->
-    <script src="script.js"></script>
+    </main>
 </body>
 </html>

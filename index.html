@@ -1,117 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- CSS linking -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISKOpe</title>
+    <title>ISKOpe - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation bar with a logo, search bar, and menu -->
-    <nav class="navbar">
-        <div class="logo">
-            <div class="logo-img"></div> <!-- Placeholder for logo image -->
-            ISKOpe
+    <header>
+        <div class="logo">ISKOpe</div>
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
-        <input type="search" class="search-bar" placeholder="Search..."> <!-- Search bar -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle"> <!-- Checkbox for collapsible menu -->
-        <label for="menu-toggle" class="menu-btn">☰</label> <!-- Menu toggle button -->
-        <div class="menu-content">
-            <ul>
-                <li><a href="profile.html">PROFILE</a></li> <!-- Link to profile page -->
-                <li>SETTINGS</li> <!-- Settings menu -->
-                <li>HELP CENTER</li> <!-- Help Center menu -->
-            </ul>
+        <div class="nav-buttons">
+            <a href="about.html" class="nav-button about-us">About Us</a>
+            <i class="profile-icon" onclick="location.href='profile.html'"></i>
         </div>
-    </nav>
-
-    <!-- Main content container -->
-    <div class="container">
-        <!-- Most Recent Section -->
-        <h2>MOST RECENT</h2>
-        <div class="recent-items">
-            <!-- Recent item cards -->
-            <div class="item-card">
-                <div class="item-img"></div> <!-- Placeholder for item image -->
-                <p>Item Name</p>
-                <small>Date:</small>
+        
+    </header>
+    <main>
+        <section class="most-recent">
+            <h2>Most Recent</h2>
+            <div class="recent-items">
+                <p class="no-items">No items have been posted yet.</p>
             </div>
-            <div class="item-card">
-                <div class="item-img"></div>
-                <p>Item Name</p>
-                <small>Date:</small>
+        </section>
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <i class="icon electronics"></i>
+                    <p>Electronics</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon wallets"></i>
+                    <p>Wallets</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon bags"></i>
+                    <p>Bags</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon ids"></i>
+                    <p>IDs</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon documents"></i>
+                    <p>Documents</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon books"></i>
+                    <p>Books</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon clothing"></i>
+                    <p>Clothing</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon fashion"></i>
+                    <p>Fashion Accessories</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon jewelry"></i>
+                    <p>Jewelry</p>
+                </div>
+                <div class="category-item">
+                    <i class="icon others"></i>
+                    <p>Others</p>
+                </div>
             </div>
-            <div class="item-card">
-                <div class="item-img"></div>
-                <p>Item Name</p>
-                <small>Date:</small>
-            </div>
-            <div class="item-card">
-                <div class="item-img"></div>
-                <p>Item Name</p>
-                <small>Date:</small>
-            </div>
-            <div class="item-card">
-                <div class="item-img"></div>
-                <p>Item Name</p>
-                <small>Date:</small>
-            </div>
-            <div class="item-card">
-                <div class="item-img"></div>
-                <p>Item Name</p>
-                <small>Date:</small>
-            </div>
-        </div>
-
-        <!-- Categories Section -->
-        <h2>CATEGORIES</h2>
-        <div class="categories">
-            <!-- Category items with icons and labels -->
-            <div class="category">
-                <div class="category-icon"></div> <!-- Placeholder for category icon -->
-                <span>Electronics</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Wallets</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Bags</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>IDs</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Documents</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Books</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Clothing</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Fashion Accessories</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Jewelry</span>
-            </div>
-            <div class="category">
-                <div class="category-icon"></div>
-                <span>Others</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating button for adding new content -->
-    <button class="add-btn">+</button>
+        </section>
+        <a href="submit-item.html" class="floating-add-button">+</a>
+    </main>
 </body>
 </html>

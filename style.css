@@ -1,357 +1,519 @@
-/* General Reset */
-* {
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    color: #333;
 }
 
-/* Body Background */
-body {
-    background-color: #f5efe6;
-}
-
-/* Navbar Styling */
-.navbar {
-    background-color: maroon;
-    padding: 1rem;
+/* Header */
+header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
+    padding: 10px 20px;
+    background: #800000;
+    color: white;
 }
 
-/* Logo Styling */
 .logo {
-    color: white;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
+    color: #FFD700;
+}
+
+/* Search Bar */
+.search-bar-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-.logo-img {
-    width: 30px;
-    height: 30px;
-    background-color: white;
-}
-
-/* Search Bar Styling */
-.search-bar {
-    flex-grow: 0.3;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 20px;
-}
-
-/* Menu Button Styling */
-.menu-btn {
-    color: white;
-    font-size: 1.5rem;
+.nav-button.about-us {
     background: none;
     border: none;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Container Styling */
-.container {
-    padding: 2rem;
+.nav-button.about-us:hover {
+    color: #FFD700;
 }
 
-/* Section Title Styling */
-h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+.profile-icon {
+    width: 24px;
+    height: 24px;
+    background: url('./assets3/profile_icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Recent Items Grid Layout */
-.recent-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    overflow-x: auto;
+.home-icon {
+    width: 24px;
+    height: 24px;
+    background: url('./assets3/home-icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Item Card Styling */
-.item-card {
+.profile-icon:hover,
+.home-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* Most Recent Section */
+.most-recent, .categories {
     background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
-.item-img {
-    width: 100%;
-    height: 130px;
-    background-color: #ddd;
-    margin-bottom: 0.5rem;
+.most-recent h2, .categories h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #800000;
 }
 
-/* Categories Layout */
-.categories {
+.recent-items {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    text-align: center;
-    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 }
 
-/* Category Item Styling */
-.category {
+.no-items {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Categories Section */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.category-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    flex: 1 0 18%;
-    min-width: 120px;
+    justify-content: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.category-icon {
-    width: 55px;
-    height: 55px;
-    background-color: #333;
-    border-radius: 50%;
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Spacing for first four categories */
-.categories > .category:nth-child(-n+4) {
-    margin-bottom: 1.5rem;
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-/* Add Button Styling */
-.add-btn {
+/* Floating Add Button */
+.floating-add-button {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 30px;
+    right: 30px;
+    background: #800000;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    background-color: #666;
-    border-radius: 50%;
-    color: white;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
 }
 
-/* Profile Page Styling */
-.profile-container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+.floating-add-button:hover {
+    background: #660000;
+    transform: scale(1.1);
 }
 
-/* Profile Title Styling */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: maroon;
+/* Profile Section */
+.profile-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* Profile Picture Container */
-.profile-picture {
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Profile Picture */
+.profile-picture-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .upload-label {
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Profile Picture Box */
-.picture-container {
-    width: 150px;
-    height: 150px;
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    overflow: hidden;
-    text-align: center;
-}
-
-#upload-text {
-    font-size: 1rem;
+    position: absolute;
+    bottom: -15px;
+    background: #800000;
     color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    cursor: pointer;
     text-align: center;
-    line-height: 150px;
 }
 
-.upload-prompt {
-    color: maroon;
-    font-size: 0.9rem;
-}
-
-/* Hide default file input */
-#upload-picture {
+#profile-upload {
     display: none;
 }
 
-/* Profile Form Styling */
+/* Profile Form Input Styling */
 .profile-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 15px;
+    text-align: left; /* Ensure labels are left-aligned */
 }
 
 .profile-form label {
-    font-size: 1rem;
-    color: maroon;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
 }
 
 .profile-form input {
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Submit Button Styling */
-.profile-form button {
-    background-color: maroon;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.profile-form button:hover {
-    background-color: #800000;
-}
-
-/* Responsive Styles for smaller screens */
-@media (max-width: 768px) {
-    .profile-container {
-        padding: 1rem;
-    }
-
-    .profile-form input,
-    .profile-form button {
-        font-size: 0.9rem;
-    }
-}
-
-/* Menu Toggle and Content Styles */
-.menu-toggle {
-    display: none;
-}
-
-.menu-content {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #f5f5f5;
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-}
-
-.menu-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-content li {
-    padding: 15px 25px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.menu-content li:hover {
-    background-color: #e5e5e5;
-}
-
-/* Menu Button */
-.menu-btn {
-    color: white;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-    position: relative;
-}
-
-/* Overlay for Menu */
-.menu-toggle:checked ~ .menu-content::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Show Menu on Toggle */
-.menu-toggle:checked ~ .menu-content {
-    right: 0;
+.profile-form input:focus {
+    outline: none;
+    border-color: #800000;
+    box-shadow: 0 0 8px rgba(128, 0, 0, 0.4);
 }
 
-/* Error Message Styling */
-.error-message {
-    color: #ff0000;
-    font-size: 0.8rem;
-    margin-top: 5px;
+.save-button {
+    background: #800000;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover {
+    background: #660000;
+    transform: scale(1.05);
+}
+
+
+/* Submit Item Section */
+.submit-item-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.submit-item-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+
+/* Image Upload */
+.image-upload {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
+    cursor: pointer;
+}
+
+.image-upload .upload-label {
+    position: absolute;
+    bottom: -15px;
+    background: #800000;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#item-image {
     display: none;
 }
 
-/* Input Styling for Validation */
-input.invalid {
-    border: 1px solid #ff0000;
+/* Form Styling */
+.submit-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
 }
 
-input.valid {
-    border: 1px solid #00a000;
-}
-
-/* Profile Link Styling in Menu */
-.menu-content a {
-    text-decoration: none;
-    color: inherit; 
-}
-
-.menu-content li a:hover {
-    color: maroon; 
-}
-
-/* No underline and white color for the logo link */
-.logo-link {
-    text-decoration: none;
-    color: white; 
-    display: flex; 
-    align-items: center;
-}
-
-/* Logo Styling */
-.logo {
-    color: white;
-    font-size: 1.5rem;
+.submit-item-form label {
     font-weight: bold;
+    font-size: 14px;
+}
+
+.submit-item-form input,
+.submit-item-form select {
+    width: 96.3%; /* Adjust this value for the dropdown width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+
+.submit-item-form .date-input {
+    display: flex;
+    gap: 10px;
+}
+
+.save-button {
+    background: #800000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.save-button:hover {
+    background: #660000;
+}
+
+/* About Us Section */
+.about-us-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px; 
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.about-us-section h1 {
+    font-size: 80px;
+    font-weight: bold;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.about-us-section p {
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Background Image for About Us */
+body {
+    background: url('./assets3/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-message h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: #800000;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.3);
+}
+
+.welcome-message p {
+    font-size: 18px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    max-width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-panel h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-subtext {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.remember-me {
     display: flex;
     align-items: center;
-    gap: 0.5rem; 
 }
 
-/* Logo image styling */
-.logo-img {
-    width: 30px;
-    height: 30px;
-    background-color: white; /* Placeholder for logo image */
+.remember-me label {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #333;
 }
+
+.forgot-password {
+    font-size: 14px;
+    color: #800000;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #660000;
+}
+
+.login-panel input[type="text"],
+.login-panel input[type="password"] {
+    width: 100%;
+    max-width: 422px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-panel input[type="text"]:focus,
+.login-panel input[type="password"]:focus {
+    outline: none;
+    border-color: #800000;
+    box-shadow: 0 0 8px rgba(128, 0, 0, 0.4);
+}
+
+.login-panel button {
+    width: 100%;
+    padding: 12px;
+    background: #800000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-panel button:hover {
+    background: #660000;
+}
+
 

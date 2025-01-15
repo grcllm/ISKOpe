@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit an Item - ISKOpe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">ISKOpe</div>
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Search for lost items...">
+        </div>
+        <div class="nav-buttons">
+            <a href="about.html" class="nav-button about-us">About Us</a>
+            <i class="home-icon" onclick="location.href='index.html'"></i>
+        </div>
+        
+    </header>
+    <main class="submit-item-section">
+        <h1>Submit an Item</h1>
+        <div class="submit-form-container">
+            <div class="image-upload">
+                <label for="item-image" class="upload-label">Upload</label>
+                <input type="file" id="item-image" accept="image/*">
+            </div>
+            <form class="submit-item-form">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" placeholder="Enter item name" required>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="wallets">Wallets</option>
+                    <option value="bags">Bags</option>
+                    <option value="ids">IDs</option>
+                    <option value="documents">Documents</option>
+                    <option value="books">Books</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="fashion">Fashion Accessories</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <div class="date-input">
+                    <select id="month" required>
+                        <option value="" disabled selected>MM</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <!-- Add more months -->
+                    </select>
+                    <select id="day" required>
+                        <option value="" disabled selected>DD</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <!-- Add more days -->
+                    </select>
+                    <select id="year" required>
+                        <option value="" disabled selected>YYYY</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <!-- Add more years -->
+                    </select>
+                </div>
+
+                <label for="found-location">Where the item was found:</label>
+                <input type="text" id="found-location" placeholder="Enter location" required>
+
+                <label for="pickup-location">Pickup Location:</label>
+                <input type="text" id="pickup-location" placeholder="Enter pickup location" required>
+
+                <button type="submit" class="save-button">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
