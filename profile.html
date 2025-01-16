@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Head section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - ISKOpe</title>
@@ -9,35 +10,50 @@
 <body>
     <header>
         <a href="index.html"><div class="logo">ISKOpe</div></a>
+         <!-- Search bar for searching lost items -->
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
+        <!-- Navigation buttons -->
         <div class="nav-buttons">
+            <!-- About Us page link -->
             <a href="about.html" class="nav-button about-us">About Us</a>
+            <!-- Home icon redirects to the homepage -->
             <i class="home-icon" onclick="location.href='index.html'"></i>
         </div>        
     </header>
-    <main class="profile-section">
+     <!-- Main Content Section -->
+     <main class="profile-section">
         <h1>Update Profile</h1>
         <div class="profile-card">
+            <!-- Profile picture upload container -->
             <div class="profile-picture-container">
+                <!-- Upload button for profile picture -->
                 <label for="profile-upload" class="upload-label">Upload</label>
                 <input type="file" id="profile-upload" accept="image/*">
             </div>
+
+            <!-- Profile form for user details -->
             <form class="profile-form">
+                <!-- Input field for email -->
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
 
+                <!-- Input field for contact number -->
                 <label for="contact-number">Contact Number:</label>
                 <input type="text" id="contact-number" placeholder="Enter your contact number" required>
 
+                <!-- Input field for student number -->
                 <label for="student-number">Student Number:</label>
                 <input type="text" id="student-number" placeholder="Enter your student number" required>
 
+                <!-- Button to save profile details -->
                 <button type="submit" class="save-button">Save</button>
             </form>
         </div>
     </main>
-        <script src="script.js"></script>
+
+     <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

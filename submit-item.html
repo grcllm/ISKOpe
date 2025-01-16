@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit an Item - ISKOpe</title>
@@ -8,10 +9,12 @@
 </head>
 <body>
     <header>
+         <!-- Header section containing the ISKOpe logo, search bar, and navigation buttons -->
         <a href="index.html"><div class="logo">ISKOpe</div></a>
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
+        <!-- Links for About Us and navigating back to the Home page -->
         <div class="nav-buttons">
             <a href="about.html" class="nav-button about-us">About Us</a>
             <i class="home-icon" onclick="location.href='index.html'"></i>
@@ -19,16 +22,19 @@
         
     </header>
     <main class="submit-item-section">
+         <!-- Main section for the 'Submit an Item' form -->
         <h1>Submit an Item</h1>
         <div class="submit-form-container">
+            <!-- Image upload section for uploading item photos -->
             <div class="image-upload">
                 <label for="item-image" class="upload-label">Upload</label>
                 <input type="file" id="item-image" accept="image/*">
             </div>
             <form class="submit-item-form">
+                <!-- Input fields for item details -->
                 <label for="item-name">Item Name:</label>
                 <input type="text" id="item-name" placeholder="Enter item name" required>
-
+                <!-- Dropdown menu to select the category of the item -->
                 <label for="category">Category:</label>
                 <select id="category" required>
                     <option value="" disabled selected>Select category</option>
@@ -43,7 +49,7 @@
                     <option value="jewelry">Jewelry</option>
                     <option value="others">Others</option>
                 </select>
-
+                 <!-- Dropdown menu to select the date the item was found -->
                 <label for="date">Date:</label>
                 <div class="date-input">
                     <select id="month" required>
@@ -99,20 +105,20 @@
                         <option value="" disabled selected>Year</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
-                        <!-- Add more years -->
                     </select>
                 </div>
-
+                 <!-- Input fields for location details -->
                 <label for="found-location">Where the item was found:</label>
                 <input type="text" id="found-location" placeholder="Enter location" required>
 
                 <label for="pickup-location">Pickup Location:</label>
                 <input type="text" id="pickup-location" placeholder="Enter pickup location" required>
-
+                <!-- Submit button to save the item details -->
                 <button type="submit" class="save-button">Submit</button>
             </form>
         </div>
     </main>
+        <!-- Link to the external JavaScript file -->
         <script src="script.js"></script>
 </body>
 </html>

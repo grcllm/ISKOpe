@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Head section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISKOpe - Home</title>
@@ -8,26 +9,30 @@
 </head>
 <body>
     <header>
+        <!-- Header containing logo, search bar, and navigation buttons -->
         <div class="logo">ISKOpe</div>
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
         <div class="nav-buttons">
+            <!-- Navigation links to About Us and Profile pages -->
             <a href="about.html" class="nav-button about-us">About Us</a>
             <i class="profile-icon" onclick="location.href='profile.html'"></i>
         </div>
-        
     </header>
     <main>
+        <!-- Section displaying the most recently posted items -->
         <section class="most-recent">
             <h2>Most Recent</h2>
             <div class="recent-items">
                 <p class="no-items">No items have been posted yet.</p>
             </div>
         </section>
+        <!-- Section listing different categories of lost items -->
         <section class="categories">
             <h2>Categories</h2>
             <div class="category-grid">
+                <!-- Category items displayed in a grid format -->
                 <div class="category-item">
                     <i class="icon electronics"></i>
                     <p>Electronics</p>
@@ -70,6 +75,7 @@
                 </div>
             </div>
         </section>
+        <!-- Floating button for adding a new item -->
         <a href="submit-item.html" class="floating-add-button">+</a>
     </main>
 </body>
