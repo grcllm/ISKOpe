@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Head section -->
+    <!-- Head Section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit an Item - ISKOpe</title>
@@ -9,32 +9,46 @@
 </head>
 <body>
     <header>
-         <!-- Header section containing the ISKOpe logo, search bar, and navigation buttons -->
-        <a href="index.html"><div class="logo">ISKOpe</div></a>
+        <!-- Header Section -->
+        <a href="index.html">
+            <div class="logo">ISKOpe</div>
+        </a>
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
-        <!-- Links for About Us and navigating back to the Home page -->
         <div class="nav-buttons">
             <a href="about.html" class="nav-button about-us">About Us</a>
             <i class="home-icon" onclick="location.href='index.html'"></i>
         </div>
-        
     </header>
+    
     <main class="submit-item-section">
-         <!-- Main section for the 'Submit an Item' form -->
+        <!-- Main Section -->
         <h1>Submit an Item</h1>
         <div class="submit-form-container">
-            <!-- Image upload section for uploading item photos -->
             <div class="image-upload">
                 <label for="item-image" class="upload-label">Upload</label>
                 <input type="file" id="item-image" accept="image/*">
             </div>
+            
             <form class="submit-item-form">
-                <!-- Input fields for item details -->
+                <!-- Radio Buttons -->
+                <div class="radio-container">
+                    <div class="radio-item">
+                        <input type="radio" id="lost" name="item-status" value="lost" checked onclick="toggleFields()">
+                        <label for="lost">I lost an item</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="found" name="item-status" value="found" onclick="toggleFields()">
+                        <label for="found">I found an item</label>
+                    </div>
+                </div>
+
+                <!-- Item Details -->
                 <label for="item-name">Item Name:</label>
                 <input type="text" id="item-name" placeholder="Enter item name" required>
-                <!-- Dropdown menu to select the category of the item -->
+
+                <!-- Category Dropdown -->
                 <label for="category">Category:</label>
                 <select id="category" required>
                     <option value="" disabled selected>Select category</option>
@@ -49,7 +63,8 @@
                     <option value="jewelry">Jewelry</option>
                     <option value="others">Others</option>
                 </select>
-                 <!-- Dropdown menu to select the date the item was found -->
+
+                <!-- Date Dropdown -->
                 <label for="date">Date:</label>
                 <div class="date-input">
                     <select id="month" required>
@@ -67,6 +82,7 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
+
                     <select id="day" required>
                         <option value="" disabled selected>Day</option>
                         <option value="01">01</option>
@@ -101,24 +117,128 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
+
                     <select id="year" required>
                         <option value="" disabled selected>Year</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
                     </select>
                 </div>
-                 <!-- Input fields for location details -->
-                <label for="found-location">Where the item was found:</label>
-                <input type="text" id="found-location" placeholder="Enter location" required>
 
-                <label for="pickup-location">Pickup Location:</label>
-                <input type="text" id="pickup-location" placeholder="Enter pickup location" required>
-                <!-- Submit button to save the item details -->
-                <button type="submit" class="save-button">Submit</button>
+                <!-- Location Details -->
+                <label for="found-location" id="found-location-label" style="display:none;">Where the item was found:</label>
+                <input type="text" id="found-location" placeholder="Enter location" required style="display:none;">
+
+                <label for="pickup-location" id="pickup-location-label" style="display:none;">Pickup Location:</label>
+                <input type="text" id="pickup-location" value="PUP Main Guard House" readonly required style="display:none;">
+
+                <label for="lost-location" id="lost-location-label" style="display:none;">Where the item was last seen:</label>
+                <input type="text" id="lost-location" placeholder="Enter location" required style="display:none;">
+
+                <!-- Time Section for Last Seen -->
+                <label for="found-time" id="found-time-label" style="display:none; margin-bottom: 5px;">When the item was last seen:</label>
+                <div id="found-time-section" style="display:none;">
+                    <label for="found-time">When the item was last seen:</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <!-- Hour Dropdown -->
+                        <select id="found-hour" required>
+                            <option value="" disabled selected>00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option> 
+                        </select>
+
+                        <span>:</span>
+
+                        <!-- Minute Dropdown -->
+                        <select id="found-minute" required>
+                            <option value="" disabled selected>00</option>
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                        </select>
+
+                        <!-- AM/PM Dropdown -->
+                        <select id="found-am-pm" required>
+                            <option value="" disabled selected>AM/PM</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="save-button">Save</button>
             </form>
         </div>
     </main>
-        <!-- Link to the external JavaScript file -->
-        <script src="script.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
