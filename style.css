@@ -297,9 +297,9 @@ main {
 /* Image Upload */
 .image-upload {
     position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    border-radius: 0%;
     background: #ddd;
     display: flex;
     justify-content: center;
