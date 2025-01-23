@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    profilePictureContainer.style.backgroundImage = `url('${e.target.result}')`;
+                    profilePictureContainer.style.backgroundImage = url('${e.target.result}');
                     profilePictureContainer.style.backgroundSize = 'cover';
                     profilePictureContainer.style.backgroundPosition = 'center';
                 };
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    itemImageContainer.style.backgroundImage = `url('${e.target.result}')`;
+                    itemImageContainer.style.backgroundImage = url('${e.target.result}');
                     itemImageContainer.style.backgroundSize = 'cover';
                     itemImageContainer.style.backgroundPosition = 'center';
                 };
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
 
     // Submit Item Page: Toggles input fields 
     function toggleFields() {
@@ -47,33 +48,42 @@ document.addEventListener('DOMContentLoaded', function() {
         const pickupLocationInput = document.getElementById('pickup-location');
         const foundTimeSection = document.getElementById('found-time-section');
         const submitButton = document.getElementById('submit-button');
-        
+        // Check if "Lost" option is selected
         if (document.getElementById('lost').checked) {
+            console.log('Lost option selected');
             // Show "Lost" fields
             lostLocationLabel.style.display = 'block';
             lostLocationInput.style.display = 'block';
+            // Hide "Found" fields
             foundLocationLabel.style.display = 'none';
             foundLocationInput.style.display = 'none';
             pickupLocationLabel.style.display = 'none';
             pickupLocationInput.style.display = 'none';
+            // Show time section for lost item
             foundTimeSection.style.display = 'block';
-        } else if (document.getElementById('found').checked) {
+        } 
+        // Check if "Found" option is selected
+        else if (document.getElementById('found').checked) {
+            console.log('Found option selected');
             // Show "Found" fields
             foundLocationLabel.style.display = 'block';
             foundLocationInput.style.display = 'block';
             pickupLocationLabel.style.display = 'block';
             pickupLocationInput.style.display = 'block';
+            // Hide "Lost" fields
             lostLocationLabel.style.display = 'none';
             lostLocationInput.style.display = 'none';
+            // Hide time section for found item
             foundTimeSection.style.display = 'none';
         }
 
+        // Always ensure submit button is visible
         submitButton.style.display = 'block';
     }
 
+    // Call toggleFields on load to set default state
     toggleFields();
-});
-
+    
 // Show the logout confirmation popup
 function showLogoutPopup() {
     document.getElementById("logoutPopup").style.display = "flex";
