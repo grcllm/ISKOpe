@@ -178,7 +178,13 @@ main {
 
 .icon {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin: 5;
+}
+
+.category-item p {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-size: 14px; 
 }
 
 /* Floating Add Button */
