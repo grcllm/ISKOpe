@@ -22,6 +22,11 @@ header {
     font-size: 24px;
     font-weight: bold;
     color: #FFD700;
+    transition: color 0.3s ease; 
+}
+
+.logo:hover {
+    color: #FFFFFF; 
 }
 
 /* Search Bar */
@@ -52,12 +57,28 @@ header {
     border: none;
     color: white;
     font-size: 16px;
+    margin-right: 10px;
     cursor: pointer;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-button.about-us:hover {
     color: #FFD700;
+}
+.profile-icon-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 27px;  
+    height: 27px;
+}
+
+.nav-button.profile-icon:hover {
+    color: #FFD700;
+
 }
 
 .back-button {
