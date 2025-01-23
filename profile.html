@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <!-- Head section -->
+    <!-- Head Section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - ISKOpe</title>
+    <title>Submit an Item - ISKOpe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="index.html"><div class="logo">ISKOpe</div></a>
-         <!-- Search bar for searching lost items -->
+        <!-- Header Section -->
+        <a href="index.html">
+            <div class="logo">ISKOpe</div>
+        </a>
         <div class="search-bar-container">
             <input type="text" class="search-bar" placeholder="Search for lost items...">
         </div>
-        <!-- Navigation buttons -->
         <div class="nav-buttons">
-            <!-- About Us page link -->
             <a href="about.html" class="nav-button about-us">About Us</a>
-            <!-- Home icon redirects to the homepage -->
-            <i class="home-icon" onclick="location.href='index.html'"></i>
-        </div>        
+            <a href="profile.html">
+                <img src="assets/Profile White.png" alt="Profile" class="profile-icon">
+            </a>
+        </div>
     </header>
+
         <!-- Back button -->
         <button class="back-button" onclick="window.history.back()">
             <span class="back-icon">&#8592;</span>
@@ -59,13 +61,22 @@
 
                 <!-- Button to save profile details and log out -->
                 <button type="submit" class="save-button">Save</button> 
-                <button type="button" class="log-out-button" onclick="window.location.href='login.html';">Log out</button>
-
+                <button type="button" class="log-out-button" onclick="showLogoutPopup()">Log out</button>
             </form>
         </div>
     </main>
 
-     <!-- Link to the external JavaScript file -->
+        <!-- Confirmation Popup -->
+        <div id="logoutPopup" class="popup">
+            <div class="popup-content">
+                <h3>Are you sure you want to log out?</h3>
+                <button onclick="logout()">Yes</button>
+                <button onclick="closePopup()">No</button>
+            </div>
+        </div>
+
+    <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
+    

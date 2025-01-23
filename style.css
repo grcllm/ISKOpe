@@ -672,3 +672,66 @@ body {
 .get-started:hover {
     background: #660000;
 }
+
+/* Popup container */
+.popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup container */
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+/* Popup content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    font-size: 15x; 
+}
+
+/* Popup heading (h3) */
+.popup-content h3 {
+    font-size: 20px;
+}
+
+/* Popup button */
+.popup button {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Button hover effect */
+.popup button:hover {
+    background-color: #FFD700;
+    color: #800000;
+}
+
+
