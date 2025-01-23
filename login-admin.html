@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Head section -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">ISKOpe</div>
+    <div class="welcome-message">
+        <h1>Welcome to ISKOpe</h1>
+        <p>A lost and found system tailored for the entire PUP community.</p>
+    </div>
+     <!-- Main content container for the login panel -->
+    <div class="container">
+        <div class="login-panel">
+            <!-- Title and description for the login form -->
+            <h1>Login</h1>
+            <p class="login-subtext">Welcome back! Please login into your account.</p>
+            <!-- Form for user login -->
+            <form>
+                 <!-- Inputs for email and password -->
+                <input type="text" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <!-- Options for remembering the user and resetting password -->
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                 <!-- Login submission button -->
+                <button type="submit">Sign In</button>
+            </form>
+            <a href="login.html" class="admin-link">Log in as&nbsp;<span style="text-decoration: underline;">student</span></a>
+        </div>
+    </div>
+</body>
+</html>
