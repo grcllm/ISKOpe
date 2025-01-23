@@ -482,6 +482,21 @@ body {
     color: #660000;
 }
 
+.admin-link {
+    font-size: 14px;
+    color: #800000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+.admin-link:hover {
+    color: #660000;
+}
+
 .login-panel input[type="text"],
 .login-panel input[type="password"] {
     width: 100%;
