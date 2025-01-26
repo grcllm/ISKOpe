@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    profilePictureContainer.style.backgroundImage = url('${e.target.result}');
+                    profilePictureContainer.style.backgroundImage = `url('${e.target.result}')`;
                     profilePictureContainer.style.backgroundSize = 'cover';
                     profilePictureContainer.style.backgroundPosition = 'center';
                 };
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (file) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    itemImageContainer.style.backgroundImage = url('${e.target.result}');
+                    itemImageContainer.style.backgroundImage = `url('${e.target.result}')`;
                     itemImageContainer.style.backgroundSize = 'cover';
                     itemImageContainer.style.backgroundPosition = 'center';
                 };
