@@ -134,7 +134,7 @@
 
                 <!-- Location Details -->
                 <label for="found-location" id="found-location-label" style="display:none;">Where the item was found:</label>
-                <input type="text" id="found-location" placeholder="Enter location" required style="display:none;">
+                <input type="text" id="found-location" name="found-location" placeholder="Enter location" required style="display:none;">
 
                 <label for="pickup-location" id="pickup-location-label" style="display:none;">Pickup Location:</label>
                 <input type="text" id="pickup-location" value="PUP Main Guard House" readonly required style="display:none;">
@@ -241,11 +241,13 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="save-button">Save</button>
+                <button id="submit-button" type="submit" class="save-button">Save</button>
             </form>
         </div>
     </main>
     
     <script src="script.js"></script>
+    <script src="checkToken.js"></script>
+    <script src="itemUpload.js"></script>
 </body>
 </html>

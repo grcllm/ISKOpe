@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details - ISKOpe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Header section with logo, search bar, and navigation buttons -->
+        <div class="logo">ISKOpe</div>
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Search for lost items...">
+        </div>
+        <div class="nav-buttons">
+            <a href="about.html" class="nav-button about-us">About Us</a>
+            <a href="profile.html">
+                <img src="assets/Profile White.png" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </header>
+
+    <main class="item-page">
+        <button class="back-button" onclick="location.href='index.html'">&larr; Back</button>
+        
+        <div class="item-details">
+            <img id="item-image" src="https://aki-iskope.s3.ap-southeast-1.amazonaws.com/ctrl-alt-run-ticket.png" alt="Item Image" class="item-image">
+            <h1 id="item-name" class="item-name">Loading...</h1>
+            <p id="item-status" class="item-status">Loading...</p>
+            <p id="item-category" class="item-category">Category: Loading...</p>
+            <p id="item-date" class="item-date">Date: Loading...</p>
+            <p id="item-time" class="item-time">Time: Loading...</p>
+            <p id="item-place" class="item-place">Place Last Seen: Loading...</p>
+            <p id="item-pickup" class="item-pickup">Pickup Point: Loading...</p>
+        </div>
+    </main>
+
+    <script src="checkToken.js"></script>
+    <script src="itemDetails.js"></script>
+</body>
+</html>

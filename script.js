@@ -48,35 +48,65 @@ document.addEventListener('DOMContentLoaded', function() {
         const pickupLocationInput = document.getElementById('pickup-location');
         const foundTimeSection = document.getElementById('found-time-section');
         const submitButton = document.getElementById('submit-button');
+        
         // Check if "Lost" option is selected
         if (document.getElementById('lost').checked) {
             console.log('Lost option selected');
+            
             // Show "Lost" fields
             lostLocationLabel.style.display = 'block';
             lostLocationInput.style.display = 'block';
+            // Remove the 'required' attribute for 'lost-location'
+            lostLocationInput.setAttribute('required', 'true');
+            
             // Hide "Found" fields
             foundLocationLabel.style.display = 'none';
             foundLocationInput.style.display = 'none';
+            // Remove the 'required' attribute for 'found-location'
+            foundLocationInput.removeAttribute('required');
+            
             pickupLocationLabel.style.display = 'none';
             pickupLocationInput.style.display = 'none';
+            // Remove the 'required' attribute for 'pickup-location'
+            pickupLocationInput.removeAttribute('required');
+            
             // Show time section for lost item
             foundTimeSection.style.display = 'block';
+            // Add the 'required' attribute for 'time' fields
+            document.getElementById('found-hour').setAttribute('required', 'true');
+            document.getElementById('found-minute').setAttribute('required', 'true');
+            document.getElementById('found-am-pm').setAttribute('required', 'true');
+            
         } 
         // Check if "Found" option is selected
         else if (document.getElementById('found').checked) {
             console.log('Found option selected');
+            
             // Show "Found" fields
             foundLocationLabel.style.display = 'block';
             foundLocationInput.style.display = 'block';
+            // Add the 'required' attribute for 'found-location'
+            foundLocationInput.setAttribute('required', 'true');
+            
             pickupLocationLabel.style.display = 'block';
             pickupLocationInput.style.display = 'block';
+            // Add the 'required' attribute for 'pickup-location'
+            pickupLocationInput.setAttribute('required', 'true');
+            
             // Hide "Lost" fields
             lostLocationLabel.style.display = 'none';
             lostLocationInput.style.display = 'none';
+            // Remove the 'required' attribute for 'lost-location'
+            lostLocationInput.removeAttribute('required');
+            
             // Hide time section for found item
             foundTimeSection.style.display = 'none';
+            // Remove the 'required' attribute for time fields
+            document.getElementById('found-hour').removeAttribute('required');
+            document.getElementById('found-minute').removeAttribute('required');
+            document.getElementById('found-am-pm').removeAttribute('required');
         }
-
+    
         // Always ensure submit button is visible
         submitButton.style.display = 'block';
     }
