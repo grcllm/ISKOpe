@@ -14,16 +14,16 @@
         <p>A lost and found system tailored for the entire PUP community.</p>
     </div>
      <!-- Main content container for the login panel -->
-    <div class="container">
+     <div class="container">
         <div class="login-panel">
             <!-- Title and description for the login form -->
             <h1>Login</h1>
             <p class="login-subtext">Welcome back! Please login into your account.</p>
             <!-- Form for user login -->
-            <form>
-                 <!-- Inputs for username and password -->
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+            <form id="login-form">
+                 <!-- Inputs for student number and password -->
+                <input type="text" id="text" placeholder="Admin Number" required>
+                <input type="password" id="password" placeholder="Password" required>
                 <!-- Options for remembering the user and resetting password -->
                 <div class="form-options">
                     <div class="remember-me">
@@ -32,12 +32,56 @@
                     </div>
                     <a href="#" class="forgot-password">Forgot password?</a>
                 </div>
-                 <!-- Login submission button -->
+                <!-- Login submission button -->
                 <button type="submit">Sign In</button>
             </form>
             <a href="login.html" class="admin-link">Log in as&nbsp;<span style="text-decoration: underline;">student</span></a>
         </div>
     </div>
-    <script src="checkToken.js"></script>
+
+    <script>
+        // Add event listener for form submission
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get email and password values
+            const email = document.getElementById('text').value;
+            const password = document.getElementById('password').value;
+
+            // Prepare the request payload
+            const requestBody = {
+                email: email,
+                password: password
+            };
+
+            // Make the fetch call to the login API
+            fetch('http://127.0.0.1:8000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody),
+            })
+            .then(response => response.json()) // Parse JSON response
+            .then(data => {
+                // Check if the response contains a token
+                if (data.token) {
+                    // Save the token in the cookie with a 1-hour expiration
+                    const expirationDate = new Date();
+                    expirationDate.setHours(expirationDate.getHours() + 1); // Set expiration time to 1 hour
+                    document.cookie = `token=${data.token}; expires=${expirationDate.toUTCString()}; path=/`;
+                    document.cookie = `isAdmin=${data.user.isAdmin}; expires=${expirationDate.toUTCString()}; path=/`;
+                    alert('Login successful!');
+                    window.location.href = '/index.html'; // Redirect to a dashboard or homepage
+                } else {
+                    alert('Login failed: ' + (data.message || 'Invalid credentials.'));
+                }
+            })
+            .catch(error => {
+                console.error('Error during login:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>

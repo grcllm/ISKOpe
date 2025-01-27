@@ -399,6 +399,10 @@ main {
     text-align: center;
 }
 
+#item-image {
+    display: none;
+}
+
 .item-image {
     display: block;
 }
@@ -793,4 +797,23 @@ body {
     color: #666;
     text-align: center;
     grid-column: span 4;
+}
+
+/* Delete Button Style */
+.delete-button {
+    background: #800000;  /* Red background to match the theme */
+    color: white;  /* White text color */
+    font-size: 16px;  /* Set font size */
+    padding: 12px 24px;  /* Adjust padding for size */
+    border-radius: 8px;  /* Rounded corners */
+    border: none;  /* No border */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background 0.3s ease, transform 0.2s ease;  /* Smooth transition */
+    margin-top: 20px;  /* Add some spacing from other elements */
+}
+
+/* Hover Effect for the Delete Button */
+.delete-button:hover {
+    background: #660000;  /* Darker red when hovered */
+    transform: scale(1.05);  /* Slightly enlarge the button */
 }

@@ -126,5 +126,10 @@ function closePopup() {
 
 // Perform the logout and redirect to the login page
 function logout() {
-    window.location.href = 'login.html'; // Redirect to login page
+    // Remove 'token' and 'isAdmin' from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
+
+    // Optionally, redirect to the login page
+    window.location.href = 'login.html';
 }

@@ -54,14 +54,10 @@ document.querySelector('.submit-item-form').addEventListener('submit', function(
         method: 'POST',
         body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status == 201) {
-            alert('Item submitted successfully!');
-            // Optionally, redirect or clear the form
-        } else {
-            alert('Failed to submit item: ' + data.message);
-        }
+    .then(response => {
+        response.json();
+        alert('Item submitted successfully!');
+        window.location.href = '/index.html';
     })
     .catch(error => {
         console.error('Error submitting item:', error);
