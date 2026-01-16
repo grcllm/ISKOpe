@@ -18,7 +18,7 @@ To make item retrieval easier, ISKOpe includes categorical search functionality 
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS , JavaScript   
+- **Frontend:** HTML, CSS, JavaScript   
 - **Backend:** PHP  
 - **Database:** MySQL  
 - **Development Environment:** XAMPP  
